@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('../images/delete.png');
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.main{
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 1028px) {
+     .main{
+        width: 100%;
+        height: 100vh;
+     }
+}
+.main__elipse{
+    height: 50%;
+    width: 30%;
+    border-radius: 100%;
+    position: absolute;
+}
+.main__elipse--purple, .main__elipse--rose{
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-duration: 10s;
+}
+.main__elipse--purple{
+    top: 0;
+    background: #19c8d4;
+    filter: blur(243.861px);
+    transform: rotate(-38.84deg);
+    animation-name: movimiento;
+}
+.main__elipse--rose{
+    background: #fd932fcc;
+    filter: blur(121.931px);
+    transform: rotate(-38.84deg);
+    top: 0;
+    left: 50%;
+    animation-name: movimiento--rose;
+}
+@keyframes movimiento{
+    0%{
+        transform: scale(.6) translate(0);
+    }
+    25%{
+        transform: scale(.8) translate(100%, 0);
+    }
+    50%{
+        transform: scale(.7) translate(100%, 140%);
+    }
+    75%{
+        transform: scale(.6) translate(0, 140%);
+    }
+    100%{
+        transform: scale(.7) translate(0);
+    }
+}
+@keyframes movimiento--rose{
+    0%{
+        transform: scale(1) translate(10%);
+    }
+    50%{
+        transform: scale(.8) translate(100%);
+    }
+    100%{
+        transform: scale(.9) translate(10%, 100%);
+    }
+}
+.main__container{
+    width: 920px;
+    height: 510px;
+    border-radius: 20px;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.main__bg{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-image: url('../images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+.main__women{
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80%;
+    background-size: contain;
+    background-position: left;
+    animation-name: img-women;
+    margin-left: -15%;
+}
+.main__women, .main__icon{
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.main__icon{
+    animation-name: icon-box;
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    z-index: 3;
+    animation-duration: 3s;
+}
+@keyframes img-women{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-5%);
+    }
+}
+@keyframes icon-box{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-15%);
+    }
+
+}
+.main__faq{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.main__question{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+.main__subtitle{
+    font-size: 1rem;
+    color: hsl(240, 6%, 50%);
+}
+.main__question img{
+    justify-self: end;
+}
+.no-height{
+    height: 0;
+    display: none;
+}
+.main__title{
+    color: hsl(237, 12%, 33%);
+    font-size: 2rem;
+}
+.height{
+    height: 100px;
+    display: unset;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+
+.main__icon--toggle{
+    transform: rotate(180deg);
+    transition: transform .2s linear;
+}
+.main__women{
+    background-image: url('../images/illustration-woman-online-desktop.svg');
+    background-position: center;
+    left: unset;
+}
+.main__icon{
+    background-image: url('../images/illustration-box-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 150px;
+}
+@media (max-width: 440px) {
+     body{
+        height: 100vh;
+     }
+     .main__container {
+        width: 90%;
+        height: 450px;
+        grid-template-columns: unset;
+        grid-template-rows: 10% 90%;
+    }
+     .main__title{
+        align-self: center;
+        font-size: 1.5rem;
+     }
+     .main__item p, .main__subtitle{
+        font-size: 12px;
+     }
+     .main__bg{
+        background-image: unset;
+     }
+     .main__women{
+        height: 90%;
+        width: 60%;
+        margin-top: -3rem;
+        z-index: 5;
+        position: absolute;
+        left: 35%;
+     }
+     .main__icon{
+        width: 100px;
+        height: 70px;
+        top: -6%;
+        left: 13%;
+        z-index: 6;
+     }
+     @keyframes icon-box {
+        0%{
+            transform: translateY(10%);
+        }100%{
+            transform: translateY(-15%);
+        }
+     }
+}
